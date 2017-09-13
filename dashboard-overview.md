@@ -2,7 +2,7 @@
 
 Copyright:
   Years: 2017
-lastupdated: "2017-07-13"
+lastupdated: "2017-09-07"
 ---
 
 {:new_window: target="_blank"}
@@ -11,29 +11,48 @@ lastupdated: "2017-07-13"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# Dashboard Overview
+# Service Overview
 
-The service dashboard overview shows you information about your Bluemix Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for Connection Strings that you can use with tools or make use of tools to connect to your database.
+The _Overview_ page shows you information about your Bluemix Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use with tools or make use of tools to connect to your database.
 
 ## Deployment Details
 
-The Deployment Details panel shows details of your service.
+The _Deployment Details_ panel shows details of your service.
 
-### Database
+![Deployment Details](./images/deployment-details.png "A view of the Deployment Details panel")
 
-The type of database that is offered by the service; in this case `rethinkdb`.
+### Type
+
+The type of database that is offered by the service; in this case `RethinkDB`.
+
+### Name
+
+An internal identifier for the service.
 
 ### Usage
 
-Shows the size of your database and the amount of storage provided by your service plan.
+The size of your database and the amount of storage provided by your service plan.
 
-## Connecting
+### Version
 
-You can connect an external application to your service using a **Connection String**, which is provided on your service dashboard overview.
+The database version that your service uses.
 
-### Connection String
+### Scale Resouces
 
-The **Connection String** can be used by some client libraries and contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
+If your service needs additional storage, or you want to reduce the amount of storage allocated to your service, you can do this by scaling resources. See [Scaling Resources](./deployment-scaling-resources.html) for more details.
+
+
+## Connection Strings
+
+You'll find each Connection String for your service in a different tab in the _Connection Strings_ panel.
+
+### HTTPS
+
+A URI-formatted connection string that can be used by some client libraries and contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
+
+### Admin
+
+The link on the **Admin** tab will open the _RabbitMQ Administration Console_. The login information is in the **HTTPS** connection string following the 'rethinkdb://' and before the '@'.
 
 ### SSL Certificate
 
