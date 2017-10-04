@@ -17,7 +17,7 @@ Compose For RethinkDB
 	dashboard-scaling-resources.md	
 
 	{: .topicgroup}
-	Connecting to Compose for Etcd
+	Connecting to Compose for RethinkDB
 		connecting-bluemix-app.md
 		connecting-external.md
 	{: .navgroup-end}
