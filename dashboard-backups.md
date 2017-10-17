@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017
-lastupdated: "2017-07-13"
+lastupdated: "2017-10-16"
 ---
 
 {:new_window: target="_blank"}
@@ -21,6 +21,10 @@ You can create and download backups from the *Manage* page of your service dashb
 Daily backups of your database are automatically scheduled. To view your existing backups, navigate to the *Manage* page of your service dashboard. 
 
 ![Backups](./images/rethink-backups-show.png "A list of backups in the service dashboard")
+
+Click on the corresponding row to expand the options for any available backup.
+
+![Backup Options](./images/rethink-backups-options.png "Options for a backup.") 
 
 ## Creating a backup on demand
 
