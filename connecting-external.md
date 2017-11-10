@@ -14,7 +14,7 @@ lastupdated: "2017-06-17"
 # Connecting an external application
 {: #connecting-external-app}
 
-Depending on which driver you are using, there are a number of ways to connect to RethinkDB. {{site.data.keyword.composeForRethinkDB}} uses a URI format connection string:
+Depending on which driver you are using, there are a number of ways to connect to RethinkDB. {{site.data.keyword.composeForRethinkDB_full}} uses a URI format connection string:
 
 ```
 rethinkdb://[username]:[password]@[host]:[port]/

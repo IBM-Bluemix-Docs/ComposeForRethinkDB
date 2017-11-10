@@ -14,7 +14,7 @@ lastupdated: "2017-10-23"
 
 # Data Browser
 
-The {{site.data.keyword.composeForRethinkDB}} service comes with access to the [administration tools provided by RethinkDB](https://www.rethinkdb.com/docs/administration-tools/).
+The {{site.data.keyword.composeForRethinkDB_full}} service comes with access to the [administration tools provided by RethinkDB](https://www.rethinkdb.com/docs/administration-tools/).
 
 When you select _Data Browser_ a new tab opens.
 
