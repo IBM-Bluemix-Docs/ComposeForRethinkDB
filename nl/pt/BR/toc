@@ -6,12 +6,14 @@ Compose For RethinkDB
 
 	{: .navgroup id="learn"}
 	index.md
+	getting_started.md
+	pricing.md
 
 	{: .topicgroup}
-	O Painel de serviço   		
-		dashboard-overview.md 		
-		dashboard-backups.md 		
-		dashboard-settings.md 		
+	O Painel de serviço
+		dashboard-overview.md
+		dashboard-backups.md
+		dashboard-settings.md
 		data-browser.md
 	{: .navgroup-end}
 

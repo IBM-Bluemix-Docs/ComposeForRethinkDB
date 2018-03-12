@@ -1,7 +1,7 @@
 ---
 
 copyright:
-  years: 2016,2017
+  years: 2016,2018
 lastupdated: "2017-07-13"
 ---
 
@@ -11,23 +11,23 @@ lastupdated: "2017-07-13"
 {:codeblock: .codeblock}
 {:pre: .pre}
 
-# 開始使用 Compose for RethinkDB
-{: #getting-started-with-compose-for-rethinkdb}
+# 關於 {{site.data.keyword.composeForRethinkDB}}
+{: #about-compose-for-rethinkdb}
 
 {{site.data.keyword.composeForRethinkDB_full}} 使用整合式管理及探索主控台來提供 JSON 文件型分散式資料庫。RethinkDB 所使用的 ReQL 查詢語言是根據功能鏈結所建置，且位於 Java、JavaScript、Python 及 Ruby 的用戶端程式庫中。使用 ReQL，可以跨叢集節點使用 RethinkDB 伺服器端特性（例如分散式結合及子查詢）。RethinkDB 也支援次要索引，以獲得較佳的讀取查詢效能。RethinkDB 的最強大特性 (changefeeds) 容許將許多 ReQL 查詢轉換為即時資訊來源。
 {:shortdesc}
 
 **附註：**在 2016 年 9 月 14 日之前佈建且仍然作用中的任何 Compose 服務實例，仍然可以使用，而且可以在 [https://www.compose.com/](https://www.compose.com) 直接存取。在 {{site.data.keyword.cloud}} 帳戶內，可以直接存取及使用從此點往前佈建的任何 Compose 服務實例。
 
-## 建立 Compose for RethinkDB 服務實例
+## 建立 {{site.data.keyword.composeForRethinkDB}} 服務實例
 
-[建立 {{site.data.keyword.composeForRethinkDB}} 實例](https://console.ng.bluemix.net/catalog/services/compose-for-rethinkdb/)。
+您可以從 {{site.data.keyword.cloud_notm}} 型錄中的 [{{site.data.keyword.composeForRethinkDB}} 頁面](https://console.{DomainName}/catalog/services/compose-for-rethinkdb/)建立 {{site.data.keyword.composeForRethinkDB}} 服務。
 
-當您建立服務的實例時，請確保要選擇服務名稱及認證名稱。請維持服務不連結；稍後使用佈建服務時所提供的認證，即可將應用程式連接至服務。*可用的認證* 小節中會列出各種認證值。
+選擇服務名稱、地區、組織，以及要在其中佈建服務的空間。您可以使用**選取資料庫版本**欄位，從可用的資料庫版本中進行選擇。
 
 當您佈建 {{site.data.keyword.composeForRethinkDB}} 實例時，可以選擇*標準* 或*企業* 方案。使用*企業* 方案，您可以將 {{site.data.keyword.composeForRethinkDB}} 實例佈建到可用的 {{site.data.keyword.composeEnterprise}} 叢集。{{site.data.keyword.composeEnterprise}} 提供企業相符性所需的安全和隔離，並使用專用網路來確保已部署之資料庫的效能。如需詳細資料，請參閱 [Compose Enterprise 文件](../ComposeEnterprise/index.html)。
 
-## 管理 Compose for RethinkDB
+## 管理 {{site.data.keyword.composeForRethinkDB}}
 
 您可以從服務儀表板來管理服務。在這裡，您可以找到 {{site.data.keyword.cloud_notm}} Compose 資料庫的相關資訊，以及連接方式。您也可以：
 - 管理備份
@@ -35,14 +35,14 @@ lastupdated: "2017-07-13"
 - 變更服務密碼
 - 使用白名單來限制對資料庫的存取權。如需相關資訊，請參閱[設定](./dashboard-settings.html)。
 
-## 連接至 Compose for RethinkDB
+## 連接至 {{site.data.keyword.composeForRethinkDB}}
 
 您可以使用與服務一起建立的認證，或使用服務儀表板的*概觀* 標籤中所提供的連線字串及指令行，來連接至服務。
 
-## 將 {{site.data.keyword.cloud_notm}} 應用程式連接至 Compose for RethinkDB
+## 將 {{site.data.keyword.cloud_notm}} 應用程式連接至 {{site.data.keyword.composeForRethinkDB}}
 
 若要將 {{site.data.keyword.cloud_notm}} 應用程式連接至服務，請使用與服務一起建立的認證。您可以在[連接 {{site.data.keyword.cloud_notm}} 應用程式](./connecting-bluemix-app.html)中，找到如何將 {{site.data.keyword.cloud_notm}} 應用程式連接至 {{site.data.keyword.composeForRethinkDB}} 服務的資訊。
 
-## 從 {{site.data.keyword.cloud_notm}} 之外連接至 Compose for RethinkDB
+## 從 {{site.data.keyword.cloud_notm}}
 
-如果您想要從 {{site.data.keyword.cloud_notm}} 之外連接至 {{site.data.keyword.composeForRethinkDB}}，則可以使用所提供的連線字串或指令行。您可以在[連接外部應用程式](./connecting-external.html)中，找到如何連接的相關資訊。
+ 之外連接至 {{site.data.keyword.composeForRethinkDB}}如果您想要從 {{site.data.keyword.cloud_notm}} 之外連接至 {{site.data.keyword.composeForRethinkDB}}，則可以使用所提供的連線字串或指令行。您可以在[連接外部應用程式](./connecting-external.html)中，找到如何連接的相關資訊。
