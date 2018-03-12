@@ -6,6 +6,7 @@ Compose For RethinkDB
 
 	{: .navgroup id="learn"}
 	index.md
+	getting_started.md
 	pricing.md
 
 	{: .topicgroup}

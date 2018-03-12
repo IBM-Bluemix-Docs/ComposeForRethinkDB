@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2017
-lastupdated: "2017-10-16"
+  years: 2017,2018
+lastupdated: "2018-03-02"
 ---
 
 {:new_window: target="_blank"}
@@ -30,19 +30,34 @@ Backup schedules and retention policies are fixed. If you need to keep more back
 
 Daily backups of your database are automatically scheduled. To view your existing backups, navigate to the *Manage* page of your service dashboard. 
 
-![Backups](./images/rethink-backups-show.png "A list of backups in the service dashboard")
+  ![Backups](./images/rethink-backups-show.png "A list of backups in the service dashboard")
 
 Click on the corresponding row to expand the options for any available backup.
 
-![Backup Options](./images/rethink-backups-options.png "Options for a backup.") 
+  ![Backup Options](./images/rethink-backups-options.png "Options for a backup.") 
+
+### Using the API to view existing backups
+
+A list of backups is available at the `GET /2016-07/deployments/:id/backups` endpoint. The Foundation Endpoint with the service instance id and the deployment id are both shown in the service's _Overview_. For example: 
+``` 
+https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
+```  
 
 ## Creating a backup on demand
 
 As well as scheduled backups you can create a backup manually. To create a manual backup, navigate to the *Manage* page of your service dashboard and click *Backup now*.
 
+### Using the API to create a backup
+
+Send a POST request to the backups endpoint to initiate an manual back up: `POST /2016-07/deployments/:id/backups`. It returns immediately with the recipe id and information about the backup as it is running. You will have to check the backups endpoint to see if the backup finished and find its backup_id before using it. Use `GET /2016-07/deployments/:id/backups/`.
+
 ## Downloading a backup
 
 To download a backup, navigate to the *Manage* page of your service dashboard and click *Download* in the corresponding row for the backup you wish to download.
+
+### Using the API to download a backup
+
+Find the backup you would like to restore from on the _Backups_ page on your service and copy the backup_id, or use the `GET /2016-07/deployments/:id/backups` to find a backup and its backup_id through the Compose API. Then, use the backup_id to find information and a download link for a specific backup: `GET /2016-07/deployments/:id/backups/:backup_id`.
 
 ## Backup contents
 
