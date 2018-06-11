@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-10-16"
+lastupdated: "2018-03-02"
 ---
 
 {:new_window: target="_blank"}
@@ -30,19 +30,34 @@ Sicherungszeitpläne und Aufbewahrungsrichtlinien sind festgelegt. Falls Sie meh
 
 Tägliche Sicherungen Ihrer Datenbank werden automatisch geplant. Navigieren Sie zum Anzeigen Ihrer vorhandenen Sicherungen zu der Seite *Verwalten* Ihres Service-Dashboards. 
 
-![Sicherungen](./images/rethink-backups-show.png "Liste der Sicherungen im Service-Dashboard")
+  ![Sicherungen](./images/rethink-backups-show.png "Liste der Sicherungen im Service-Dashboard")
 
 Klicken Sie in eine Zeile, um die Optionen für die entsprechende verfügbare Sicherung zu erweitern.
 
-![Sicherungsoptionen](./images/rethink-backups-options.png "Optionen für eine Sicherung.") 
+  ![Sicherungsoptionen](./images/rethink-backups-options.png "Optionen für eine Sicherung.") 
+
+### API verwenden, um vorhandene Backups anzuzeigen
+
+Eine Liste der Backups steht am Endpunkt `GET /2016-07/deployments/:id/backups` zur Verfügung. Die Basisendpunkte mit der Serviceinstanz-ID und der Bereitstellungs-ID werden beide in der _Übersicht_ des Service angezeigt. Beispiel: 
+``` 
+https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
+```  
 
 ## Sicherung bedarfsgerecht erstellen
 
 Neben geplanten Sicherungen können Sie manuelle Sicherungen erstellen. Navigieren Sie zum Erstellen einer manuellen Sicherung zu der Seite *Verwalten* Ihres Service-Dashboards und klicken Sie auf *Jetzt sichern*.
 
+### API verwenden, um eine Sicherung zu erstellen
+
+Senden Sie eine POST-Anforderung an den Endpunkt der Sicherung, um eine manuelle Sicherung zu initialisieren: `POST /2016-07/deployments/:id/backups`. Daraufhin wird sofort die Anleitungs-ID mit Informationen zur aktiven Sicherung zurückgegeben. Sie müssen den Endpunkt der Sicherung überprüfen, um festzustellen, ob die Sicherung fertiggestellt wurde und um die zugehörige Sicherungs-ID (backup_id) zu suchen, bevor Sie sie verwenden können. Verwenden Sie `GET /2016-07/deployments/:id/backups/`.
+
 ## Sicherung herunterladen
 
 Navigieren Sie zum Herunterladen einer Sicherung zu der Seite *Verwalten* Ihres Service-Dashboards und klicken Sie in der entsprechenden Zeile mit der Sicherung, die Sie herunterladen wollen, auf *Herunterladen*.
+
+### API verwenden, um eine Sicherung herunterzuladen
+
+Suchen Sie die Sicherung, die Sie wiederherstellen möchten auf der Seite _Sicherungen_ in Ihrem Service aus und kopieren Sie die Sicherungs-ID (backup_id) oder verwenden Sie `GET /2016-07/deployments/:id/backups`, um eine Sicherung und die zugehörige Sicherungs-ID (backup_id) über die Compose-API zu finden. Anschließend verwenden Sie die Sicherungs-ID (backup_id), um Informationen zu suchen und einen Link für eine bestimmte Sicherung herunterzuladen: `GET /2016-07/deployments/:id/backups/:backup_id`.
 
 ## Inhalt von Sicherungen
 

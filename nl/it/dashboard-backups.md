@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-10-16"
+lastupdated: "2018-03-02"
 ---
 
 {:new_window: target="_blank"}
@@ -30,19 +30,34 @@ Le politiche di conservazione e di pianificazione del backup sono fissate. Se ha
 
 I backup giornalieri del tuo database vengono automaticamente pianificati. Per visualizzare i tuoi backup esistenti, passa alla pagina *Manage* del tuo dashboard del servizio. 
 
-![Backup](./images/rethink-backups-show.png "Un elenco di backup nel dashboard del servizio")
+  ![Backup](./images/rethink-backups-show.png "Un elenco di backup nel dashboard del servizio")
 
 Fai clic sulla riga corrispondente per espandere le opzioni per ogni backup disponibile.
 
-![Opzioni backup](./images/rethink-backups-options.png "Opzioni per il backup.") 
+  ![Opzioni backup](./images/rethink-backups-options.png "Opzioni per il backup.") 
+
+### Utilizzo dell'API per visualizzare i backup esistenti
+
+Un elenco dei backup è disponibile nell'endpoint `GET /2016-07/deployments/:id/backups`. L'endpoint fondazione, con l'ID istanza di servizio e l'ID distribuzione, sono visualizzati nella _Panoramica_ del servizio. Ad esempio: 
+``` 
+https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
+```  
 
 ## Creazione di un backup su richiesta
 
 Come per i backup pianificati puoi creare un backup manualmente. Per creare un backup manuale, passa alla pagina *Manage* del tuo dashboard del servizio e fai clic su *Backup now*.
 
+### Utilizzo dell'API per creare un backup
+
+Invia una richiesta POST all'endpoint di backup per avviare un backup manuale: `POST /2016-07/deployments/:id/backups`. Restituisce immediatamente l'ID ricetta e le informazioni sul backup mentre è in esecuzione. Dovrai controllare l'endpoint dei backup per vedere se il backup è terminato e trovare il relativo backup_id prima di utilizzarlo. Utilizza `GET /2016-07/deployments/:id/backups/`.
+
 ## Scaricamento di un backup
 
 Per scaricare un backup, passa alla pagina *Manage* del tuo dashboard del servizio e fai clic su *Download* nella riga corrispondente del backup che desideri scaricare.
+
+### Utilizzo dell'API per scaricare un backup
+
+Trova il backup da cui vuoi eseguire il ripristino nella pagina _Backups_ del tuo servizio e copia il backup_id oppure utilizza il `GET /2016-07/deployments/:id/backups` per trovare un backup e il relativo backup_id tramite l'API Compose. Utilizza quindi il backup_id per trovare le informazioni e un link di download per uno specifico backup: `GET /2016-07/deployments/:id/backups/:backup_id`.
 
 ## Contenuti del backup
 
@@ -50,7 +65,7 @@ I backup di RethinkDB utilizzano il comando `dump` dal programma di utilità del
 
 ## Utilizzo di un backup con un database locale
 
-Poiché i tuoi backup RethinkDB sono disponibili per il tuo scaricamento, puoi ottenere un'istanza locale della tua distribuzione attiva e in esecuzione.
+Poiché i tuoi backup RethinkDB sono disponibili per il tuo scaricamento, puoi ottenere una istanza locale della tua distribuzione attiva e in esecuzione.
 
 1. Installa [rethink](https://www.rethinkdb.com/docs/install/)
 2. Installa il [python driver](https://www.rethinkdb.com/docs/install-drivers/python/) nel tuo percorso.

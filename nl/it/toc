@@ -1,12 +1,12 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-rethinkdb" audience="service" href="/docs/services/ComposeForRethinkDB/getting_started.html"}
+{: .toc subcollection="compose-for-rethinkdb" audience="service" href="/docs/services/ComposeForRethinkDB/index.html"}
 Compose For RethinkDB
 
 	{: .navgroup id="learn"}
-	getting_started.md
 	index.md
+	getting_started.md
 	pricing.md
 
 	{: .topicgroup}

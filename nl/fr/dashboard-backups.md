@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-10-16"
+lastupdated: "2018-03-02"
 ---
 
 {:new_window: target="_blank"}
@@ -14,7 +14,7 @@ lastupdated: "2017-10-16"
 # Sauvegardes
 {: #backups}
 
-Vous pouvez créer et télécharger des sauvegardes à partir de l'onglet _Backups_ de la page _Gérer_ du tableau de bord de votre service. Vous avez le choix entre les sauvegardes quotidiennes, hebdomadaires, mensuelles et à la demande. Elles sont conservées selon la planification suivante :
+Vous pouvez créer et télécharger des sauvegardes à partir de l'onglet _Backups_ de la page de gestion du tableau de bord de votre service. Vous avez le choix entre les sauvegardes quotidiennes, hebdomadaires, mensuelles et à la demande. Elles sont conservées selon la planification suivante :
 
 Type de sauvegarde|Planification de conservation
 ----------|-----------
@@ -28,21 +28,36 @@ Les planifications de sauvegarde et les règles de conservation sont fixées. Si
 
 ## Affichage des sauvegardes existantes
 
-Des sauvegardes quotidiennes de votre base de données sont automatiquement planifiées. Pour afficher vos sauvegardes existantes, accédez à la page *Gérer* du tableau de bord de votre service. 
+Des sauvegardes quotidiennes de votre base de données sont automatiquement planifiées. Pour afficher vos sauvegardes existantes, accédez à la page de gestion du tableau de bord de votre service. 
 
-![Sauvegardes](./images/rethink-backups-show.png "Liste des sauvegardes dans le tableau de bord du service")
+  ![Sauvegardes](./images/rethink-backups-show.png "Liste des sauvegardes dans le tableau de bord du service")
 
 Cliquez sur la ligne correspondante pour développer les options de chaque sauvegarde disponible.
 
-![Options de sauvegarde](./images/rethink-backups-options.png "Options d'une sauvegarde.") 
+  ![Options de sauvegarde](./images/rethink-backups-options.png "Options d'une sauvegarde.") 
+
+### Utilisation de l'API pour afficher les sauvegardes existantes
+
+Une liste des sauvegardes est disponible sur le noeud final `GET /2016-07/deployments/:id/backups`. L'ID d'instance de service et l'ID de déploiement du noeud final Foundation apparaissent tous les deux dans la page de vue d'ensemble du service. Par exemple :  
+``` 
+https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
+```  
 
 ## Création d'une sauvegarde à la demande
 
-Outre les sauvegardes planifiées, vous pouvez créer une sauvegarde manuelle. Pour créer une sauvegarde manuelle, accédez à la page *Gérer* du tableau de bord de votre service et cliquez sur *Backup now*.
+Outre les sauvegardes planifiées, vous pouvez créer une sauvegarde manuelle. Pour créer une sauvegarde manuelle, accédez à la page de gestion du tableau de bord de votre service et cliquez sur *Backup now*.
+
+### Utilisation de l'API pour la création d'une sauvegarde
+
+Envoyez une demande POST au noeud final des sauvegardes pour initier une sauvegarde manuelle : `POST /2016-07/deployments/:id/backups`. Il renvoie immédiatement l'ID de la recette et des informations sur la sauvegarde lors de son exécution. Il vous appartient de vérifier dans le noeud final des sauvegardes si la sauvegarde est terminée et de rechercher son backup_id avant de l'utiliser. Utilisez `GET /2016-07/deployments/:id/backups/`.
 
 ## Téléchargement d'une sauvegarde
 
-Pour télécharger une sauvegarde, accédez à la page *Gérer* du tableau de bord de votre service et cliquez sur *Télécharger* sur la ligne correspondant à la sauvegarde que vous voulez télécharger.
+Pour télécharger une sauvegarde, accédez à la page de gestion du tableau de bord de votre service et cliquez sur *Download* sur la ligne correspondant à la sauvegarde que vous voulez télécharger.
+
+### Utilisation de l'API pour le téléchargement d'une sauvegarde
+
+Recherchez la sauvegarde à restaurer dans la page _Backups_ de votre service et copiez le backup_id ou utilisez `GET /2016-07/deployments/:id/backups` pour rechercher une sauvegarde et son backup_id via l'API Compose. Utilisez ensuite l'élément backup_id pour trouver des informations et le lien de téléchargement concernant une sauvegarde spécifique : `GET /2016-07/deployments/:id/backups/:backup_id`.
 
 ## Contenu de sauvegarde
 
@@ -65,13 +80,13 @@ Si vous disposez d'un fichier de sauvegarde en local que vous voulez restaurer s
 
 1. Installez [rethink](https://www.rethinkdb.com/docs/install/)
 2. Installez le [pilote Python](https://www.rethinkdb.com/docs/install-drivers/python/) dans votre chemin.
-3. Téléchargez le certificat depuis la page *Vue d'ensemble* de votre service et sauvegardez-le en local sous le nom compose.cert.
+3. Téléchargez le certificat depuis la page *Overview* de votre service et sauvegardez-le en local sous le nom compose.cert.
 4. Procédez à la restauration à partir de la sauvegarde avec la commande suivante :
 
   ```
   rethinkdb restore -c <host>:<port> --tls-cert compose.cert -p backup.tar.gz
   ```
 
-Les valeurs d'hôte et de port sont indiquées dans votre chaîne de connexion, disponible sur la page *Vue d'ensemble* de votre service. L'élément `-p` de la commande demande les _données d'authentification_.
+Les valeurs d'hôte et de port sont indiquées dans votre chaîne de connexion, disponible sur la page *Overview* de votre service. L'élément `-p` de la commande demande les _données d'authentification_.
 
 **Remarque :** Si vous restaurez dans un déploiement existant vous devrez sans doute utiliser `--force` pour remplacer les tables existantes.

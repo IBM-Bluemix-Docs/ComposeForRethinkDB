@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-10-16"
+lastupdated: "2018-03-02"
 ---
 
 {:new_window: target="_blank"}
@@ -30,19 +30,34 @@ Planejamentos de backup e políticas de retenção são fixos. Se você precisar
 
 Os backups diários de seu banco de dados são planejados automaticamente. Para visualizar seus backups existentes, navegue para a página *Gerenciar* de seu painel de serviço. 
 
-![Backups](./images/rethink-backups-show.png "A list of backups in the service dashboard")
+  ![Backups](./images/rethink-backups-show.png "A list of backups in the service dashboard")
 
 Clique na linha correspondente para expandir as opções para qualquer backup disponível.
 
-![Backup Options](./images/rethink-backups-options.png "Options for a backup.") 
+  ![Backup Options](./images/rethink-backups-options.png "Options for a backup.") 
+
+### Usando a API para visualizar backups existentes
+
+Uma lista de backups está disponível no terminal `GET /2016-07/deployments/:id/backups`. O Terminal Foundation com o ID da instância de serviço e o ID da implementação são ambos mostrados na _Visão geral_ do serviço. Por exemplo: 
+``` 
+https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
+```  
 
 ## Criando um backup sob demanda
 
 Além de backups planejados, é possível criar um backup manualmente. Para criar um backup manual, navegue para a página *Gerenciar* de seu painel de serviço e clique em *Fazer backup agora*.
 
+### Usando a API para criar um backup
+
+Envie uma solicitação POST para o terminal de backups para iniciar um backup manual: `POST /2016-07/deployments/:id/backups`. Ele é imediatamente retornado com o ID do recibo e as informações sobre o backup enquanto ele está sendo executado. Será necessário verificar no terminal de backups se o backup foi concluído e localizar o backup_id antes de usá-lo. Use `GET /2016-07/deployments/:id/backups/`.
+
 ## Fazendo download de um backup
 
 Para fazer download de um backup, navegue para a página *Gerenciar* de seu painel de serviço e clique em *Fazer download* na linha correspondente para o backup que você deseja fazer download.
+
+### Usando a API para fazer download de um backup
+
+Localize o backup do qual gostaria de restaurar na página _Backups_ em seu serviço e copie o backup_id ou use o `GET /2016-07/deployments/:id/backups` para localizar um backup e seu backup_id por meio da API Compose. Em seguida, use o backup_id para localizar informações e um link de download para um backup específico: `GET /2016-07/deployments/:id/backups/:backup_id`.
 
 ## Conteúdos de backup
 

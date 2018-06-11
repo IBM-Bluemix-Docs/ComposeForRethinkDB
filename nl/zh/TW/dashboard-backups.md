@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-10-16"
+lastupdated: "2018-03-02"
 ---
 
 {:new_window: target="_blank"}
@@ -30,19 +30,34 @@ lastupdated: "2017-10-16"
 
 資料庫的每日備份是自動排定的。若要檢視現有備份，請導覽至服務儀表板的*管理* 頁面。 
 
-![備份](./images/rethink-backups-show.png "服務儀表板中的備份清單")
+  ![備份](./images/rethink-backups-show.png "服務儀表板中的備份清單")
 
 按一下對應列來展開任何可用備份的選項。
 
-![備份選項](./images/rethink-backups-options.png "備份的選項。") 
+  ![備份選項](./images/rethink-backups-options.png "備份的選項。") 
+
+### 使用 API 檢視現有備份
+
+備份的清單位於 `GET /2016-07/deployments/:id/backups` 端點上。具有服務實例 ID 及部署 ID 的「基礎端點」都會顯示在服務的_概觀_ 中。例如： 
+``` 
+https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
+```  
 
 ## 依需求建立備份
 
 除了排程備份外，您也可以手動建立備份。若要建立手動備份，請導覽至服務儀表板的*管理* 頁面，然後按一下*立即備份*。
 
+### 使用 API 建立備份
+
+請將 POST 要求傳送至備份端點，以起始手動備份：`POST /2016-07/deployments/:id/backups`。它會立即傳回所執行備份的秘訣 ID 及資訊。您必須檢查備份端點，以查看備份是否已完成，並在使用之前找到其 backup_id。請使用 `GET /2016-07/deployments/:id/backups/`。
+
 ## 下載備份
 
 若要下載備份，請導覽至服務儀表板的*管理* 頁面，然後針對您要下載的備份，按一下對應列中的*下載*。
+
+### 使用 API 下載備份
+
+在服務的_備份_ 頁面上，尋找您要從中還原的備份，並複製 backup_id，或使用 `GET /2016-07/deployments/:id/backups`，透過 Compose API 尋找備份及其 backup_id。然後，使用 backup_id 來尋找資訊及特定備份的下載鏈結：`GET /2016-07/deployments/:id/backups/:backup_id`。
 
 ## 備份內容
 

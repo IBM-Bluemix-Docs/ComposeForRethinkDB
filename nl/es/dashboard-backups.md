@@ -2,7 +2,7 @@
 
 copyright:
   years: 2017,2018
-lastupdated: "2017-10-16"
+lastupdated: "2018-03-02"
 ---
 
 {:new_window: target="_blank"}
@@ -30,19 +30,34 @@ Las planificaciones de copia de seguridad y las políticas de retención están 
 
 Se planifican automáticamente copias de seguridad diarias de la base de datos. Para ver las copias de seguridad existentes, vaya a la página *Gestionar* del panel de control del servicio. 
 
-![Copias de seguridad](./images/rethink-backups-show.png "Una lista de copias de seguridad del panel de control del servicio")
+  ![Copias de seguridad](./images/rethink-backups-show.png "Una lista de copias de seguridad del panel de control del servicio")
 
 Pulse en la fila correspondiente para ampliar las opciones para cualquier copia de seguridad disponible.
 
-![Opciones de copia de seguridad](./images/rethink-backups-options.png "Opciones de una copia de seguridad.") 
+  ![Opciones de copia de seguridad](./images/rethink-backups-options.png "Opciones de una copia de seguridad.") 
+
+### Utilización de la API para ver las copias de seguridad existentes
+
+Hay una lista de copias de seguridad disponible en el punto final `GET /2016-07/deployments/:id/backups`. El punto final de la fundación con el ID de la instancia de servicio y el ID de despliegue se muestran en la _Visión general_ del servicio. Por ejemplo: 
+``` 
+https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
+```  
 
 ## Creación de una copia de seguridad a petición
 
 Además de copias de seguridad planificadas, puede crear una copia de seguridad manualmente. Para crear una copia de seguridad manual, vaya a la página *Gestionar* del panel de control del servicio y pulse *Copia de seguridad ahora*.
 
+### Utilización de la API para crear una copia de seguridad
+
+Envíe una solicitud POST al punto final de las copias de seguridad para iniciar una copia de seguridad manual: `POST /2016-07/deployments/:id/backups`. Se devuelve inmediatamente con el ID de receta e información sobre la copia de seguridad mientras está en ejecución. Es necesario comprobar el punto final de copias de seguridad para ver si la copia de seguridad ha finalizado y buscar su backup_id antes de utilizarla. Utilice `GET /2016-07/deployments/:id/backups/`.
+
 ## Descarga de una copia de seguridad
 
 Para descargar una copia de seguridad, vaya a la página *Gestionar* del panel de control del servicio y pulse *Descargar* en la fila correspondiente a la copia de seguridad que desea descargar.
+
+### Utilización de la API para descargar una copia de seguridad
+
+Busque la copia de seguridad que desea restaurar en la página _Copias de seguridad_ del servicio y copie el backup_id, o utilice `GET /2016-07/deployments/:id/backups` para buscar una copia de seguridad y su backup_id mediante la API de Compose. A continuación, utilice el backup_id para buscar información y un enlace de descarga de una copia de seguridad específica: `GET /2016-07/deployments/:id/backups/:backup_id`.
 
 ## Contenido de una copia de seguridad
 
