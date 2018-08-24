@@ -13,13 +13,13 @@ lastupdated: "2018-05-07"
 
 # Service Overview
 
-The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use with tools or make use of tools to connect to your database.
+The _Overview_ page shows you information about your {{site.data.keyword.cloud}} Compose database. The overview includes essential identifying information and current resource usage. You'll also find a section for connection strings that you can use to connect to your database.
 
 ## Deployment Details
 
-The _Deployment Details_ panel shows details of your service.
+The _Deployment Details_ pane shows details of your service.
 
-![Deployment Details](./images/rethink-deployment-details.png "A view of the Deployment Details panel")
+![Deployment Details](./images/rethink-deployment-details.png "A view of the Deployment Details pane")
 
 ### Type
 
@@ -31,23 +31,23 @@ An internal identifier for the service.
 
 ### Usage
 
-The size of your database and the amount of storage provided by your service plan.
+The size of your database and the amount of storage that is provided by your service plan.
 
 ## Current Jobs
 
-Making administrative changes to your service (such as scaling, or taking a manual backup) starts a job. While a job is running, the _Current Jobs_ panel appears on the _Overview_ page, showing the job name and a progress bar. When the job is complete, the _Current Jobs_ panel no longer appears on the _Overview_ page.
+Making administrative changes to your service (such as scaling, or taking a manual backup) starts a job. While a job is running, the _Current Jobs_ pane appears on the _Overview_ page, showing the job name and a progress bar. When the job is complete, the _Current Jobs_ pane no longer appears on the _Overview_ page.
 
 ## Connection Strings
 
-You'll find each Connection String for your service in a different tab in the _Connection Strings_ panel.
+You can find each Connection String for your service in a different tab in the _Connection Strings_ pane.
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries and contains all the information needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries and contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
 
 ### Admin
 
-The link on the **Admin** tab will open the _RethinkDB Administration Console_. The login information is in the **HTTPS** connection string following the 'rethinkdb://' and before the '@'.
+The link on the **Admin** tab opens the _RethinkDB Administration Console_. The login information is in the **HTTPS** connection string that comes after `rethinkdb://` and before `@`.
 
 ### SSL Certificate
 
@@ -60,7 +60,7 @@ You can manage your {{site.data.keyword.composeForRethinkDB}} service through th
 
 ### Foundation Endpoint
 
-The foundation endpoint is composed of the region the service resides in and the service instance id. It will be at the start of every endpoint.
+The foundation endpoint is composed of the region the service resides in and the service instance ID. It is found at the start of every endpoint.
 
 ### Deployment ID
 
