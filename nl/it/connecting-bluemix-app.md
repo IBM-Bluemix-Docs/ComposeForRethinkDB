@@ -13,7 +13,7 @@ lastupdated: "2017-06-17"
 
 # Connessione a un'applicazione {{site.data.keyword.cloud_notm}}
 
-Per collegare un'applicazione {{site.data.keyword.cloud}} al tuo servizio, utilizza le credenziali create quando è stato eseguito il provisioning del servizio. L'applicazione di esempio illustra come utilizzare Node.js per il collegamento a un servizio {{site.data.keyword.composeForRethinkDB_full}} utilizzando le credenziali fornite e come creare un database e come leggere e scrivere in esso.
+Per collegare un'applicazione {{site.data.keyword.cloud}} al tuo servizio, utilizza le credenziali create quando è stato eseguito il provisioning del servizio. 'applicazione di esempio illustra come utilizzare Node.js per il collegamento a un servizio {{site.data.keyword.composeForRethinkDB_full}} utilizzando le credenziali fornite e come creare un database e come leggere e scrivere in esso.
 
 ## Collegamento utilizzando l'applicazione di esempio 'Hello World'
 

@@ -38,7 +38,7 @@ lastupdated: "2018-03-02"
 
 ### API を使用した既存のバックアップの表示
 
-バックアップのリストを `GET /2016-07/deployments/:id/backups` エンドポイントで取得できます。サービス・インスタンス ID を含むファウンデーション・エンドポイントと、デプロイメント ID は、両方ともサービスの_「概要」_に表示されます。例: 
+バックアップのリストを `GET /2016-07/deployments/:id/backups` エンドポイントで取得できます。 サービス・インスタンス ID を含むファウンデーション・エンドポイントと、デプロイメント ID は、両方ともサービスの_「概要」_に表示されます。 例: 
 ``` 
 https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INSTANCE_ID/deployments/$DEPLOYMENT_ID/backups
 ```  
@@ -49,7 +49,7 @@ https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INST
 
 ### API を使用したバックアップの作成
 
-backups エンドポイントに POST 要求 `POST /2016-07/deployments/:id/backups` を送信して、手動でバックアップを開始できます。この要求はただちに戻り、実行中のバックアップのレシピ ID と情報を返します。バックアップを使用するには、バックアップが完了したかどうかを backups エンドポイントで確認し、バックアップ ID を見つける必要があります。`GET /2016-07/deployments/:id/backups/` を使用します。
+backups エンドポイントに POST 要求 `POST /2016-07/deployments/:id/backups` を送信して、手動でバックアップを開始できます。 この要求はただちに戻り、実行中のバックアップのレシピ ID と情報を返します。 バックアップを使用するには、バックアップが完了したかどうかを backups エンドポイントで確認し、バックアップ ID を見つける必要があります。 `GET /2016-07/deployments/:id/backups/` を使用します。
 
 ## バックアップのダウンロード
 
@@ -57,7 +57,7 @@ backups エンドポイントに POST 要求 `POST /2016-07/deployments/:id/back
 
 ### API を使用したバックアップのダウンロード
 
-サービスの_「バックアップ」_ページで、リストアするバックアップを見つけて backup_id をコピーするか、`GET /2016-07/deployments/:id/backups` を使用して、Compose API でバックアップとその backup_id を見つけます。次に、backup_id を使用して、特定のバックアップの情報とダウンロード・リンクを取得します (`GET /2016-07/deployments/:id/backups/:backup_id`)。
+サービスの_「バックアップ」_ページで、リストアするバックアップを見つけて backup_id をコピーするか、`GET /2016-07/deployments/:id/backups` を使用して、Compose API でバックアップとその backup_id を見つけます。 次に、backup_id を使用して、特定のバックアップの情報とダウンロード・リンクを取得します (`GET /2016-07/deployments/:id/backups/:backup_id`)。
 
 ## バックアップの内容
 

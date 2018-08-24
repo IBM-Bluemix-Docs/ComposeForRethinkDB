@@ -57,7 +57,7 @@ Navigieren Sie zum Herunterladen einer Sicherung zu der Seite *Verwalten* Ihres 
 
 ### API verwenden, um eine Sicherung herunterzuladen
 
-Suchen Sie die Sicherung, die Sie wiederherstellen möchten auf der Seite _Sicherungen_ in Ihrem Service aus und kopieren Sie die Sicherungs-ID (backup_id) oder verwenden Sie `GET /2016-07/deployments/:id/backups`, um eine Sicherung und die zugehörige Sicherungs-ID (backup_id) über die Compose-API zu finden. Anschließend verwenden Sie die Sicherungs-ID (backup_id), um Informationen zu suchen und einen Link für eine bestimmte Sicherung herunterzuladen: `GET /2016-07/deployments/:id/backups/:backup_id`.
+Suchen Sie auf der Seite _Sicherungen_ für Ihren Service die Sicherung aus, die Sie wiederherstellen möchten, und kopieren Sie die Angabe für 'backup_id' oder verwenden Sie `GET /2016-07/deployments/:id/backups`, um eine Sicherung und die zugehörige Sicherungs-ID über die Compose-API zu suchen. Anschließend verwenden Sie die Sicherungs-ID (backup_id), um Informationen zu suchen und einen Link für eine bestimmte Sicherung herunterzuladen: `GET /2016-07/deployments/:id/backups/:backup_id`.
 
 ## Inhalt von Sicherungen
 

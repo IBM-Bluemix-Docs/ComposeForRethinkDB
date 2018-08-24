@@ -13,7 +13,7 @@ lastupdated: "2017-06-17"
 
 # {{site.data.keyword.cloud_notm}} アプリケーションの接続
 
-{{site.data.keyword.cloud}} アプリケーションをサービスに接続するには、サービスがプロビジョンされた時に作成されたサービス資格情報を使用します。 サンプル・アプリケーションでは、用意されている資格情報に基づいて Node.js によって {{site.data.keyword.composeForRethinkDB_full}} サービスに接続する方法と、データベースを作成したりデータベースの読み書きを実行したりする方法を示しています。
+{{site.data.keyword.cloud}} アプリケーションをサービスに接続するには、サービスがプロビジョンされた時に作成されたサービス資格情報を使用します。 サンプル・アプリケーションは、用意されている資格情報を使用して Node.js で {{site.data.keyword.composeForRethinkDB_full}} サービスに接続する方法と、データベースを作成し、データベースに対して読み書きを行う方法を示しています。
 
 ## 「Hello World」サンプル・アプリケーションを使用した接続
 

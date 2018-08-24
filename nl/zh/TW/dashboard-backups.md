@@ -21,7 +21,7 @@ lastupdated: "2018-03-02"
 每日|每日備份保留 7 日
 每週|每週備份保留 4 週
 每月|每月備份保留 3 個月
-隨需應變|保留一個隨需應變備份。保留的備份一律是最新的隨需應變備份。
+隨需應變|保留一份隨需應變備份。保留的備份一律是最新的隨需應變備份。
 {: caption="表 1. 備份保留排程" caption-side="top"}
 
 備份排程與保留原則是固定的。如果您需要保留的備份數目超過保留排程所容許的數目，則應該根據您的商業需求下載備份及保留保存檔。
@@ -45,11 +45,11 @@ https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INST
 
 ## 依需求建立備份
 
-除了排程備份外，您也可以手動建立備份。若要建立手動備份，請導覽至服務儀表板的*管理* 頁面，然後按一下*立即備份*。
+除了排定的備份外，您也可以手動建立備份。若要建立手動備份，請導覽至服務儀表板的*管理* 頁面，然後按一下*立即備份*。
 
 ### 使用 API 建立備份
 
-請將 POST 要求傳送至備份端點，以起始手動備份：`POST /2016-07/deployments/:id/backups`。它會立即傳回所執行備份的秘訣 ID 及資訊。您必須檢查備份端點，以查看備份是否已完成，並在使用之前找到其 backup_id。請使用 `GET /2016-07/deployments/:id/backups/`。
+請將 POST 要求傳送至 backups 端點，以起始手動備份：`POST /2016-07/deployments/:id/backups`。它會立即傳回執行中備份的秘訣 ID 及相關資訊。您必須檢查 backups 端點，以查看備份是否已完成，並在使用之前找到其 backup_id。請使用 `GET /2016-07/deployments/:id/backups/`。
 
 ## 下載備份
 
@@ -57,11 +57,11 @@ https://composebroker-dashboard-public.mybluemix.net/api/2016-07/instances/$INST
 
 ### 使用 API 下載備份
 
-在服務的_備份_ 頁面上，尋找您要從中還原的備份，並複製 backup_id，或使用 `GET /2016-07/deployments/:id/backups`，透過 Compose API 尋找備份及其 backup_id。然後，使用 backup_id 來尋找資訊及特定備份的下載鏈結：`GET /2016-07/deployments/:id/backups/:backup_id`。
+在服務的_備份_ 頁面上，尋找您要從中還原的備份，並複製 backup_id，或透過 Compose API 使用 `GET /2016-07/deployments/:id/backups` 尋找備份及其 backup_id。然後，使用 backup_id 來尋找特定備份的資訊及下載鏈結：`GET /2016-07/deployments/:id/backups/:backup_id`。
 
 ## 備份內容
 
-RethinkDB 備份會在執行中的資料庫叢集上使用 RethinkDB 指令行公用程式中的 `dump` 指令，來備份整個部署。它會儲存資料庫和表格內容，以及 meta 資料。`dump` 會使用一些叢集資源，但不會將您的用戶端鎖定，而且可以在即時叢集上執行。Compose 提供 RethinkDB 部署的備份，其具有 `rethinkdb restore` 可以直接使用的格式。
+RethinkDB 備份會在執行中的資料庫叢集上，從 RethinkDB 指令行公用程式，使用 `dump` 指令來備份整個部署。它會儲存資料庫和表格內容，以及 meta 資料。`dump` 會使用一些叢集資源，但不會將您的用戶端鎖定，而且可以在即時叢集上執行。Compose 提供 RethinkDB 部署的備份，其具有 `rethinkdb restore` 可以直接使用的格式。
 
 ## 使用備份與本端資料庫搭配
 
@@ -74,7 +74,7 @@ RethinkDB 備份會在執行中的資料庫叢集上使用 RethinkDB 指令行�
 
 開啟瀏覽器視窗，並導覽至 `locahost:8080`，以查看 RethinkDB 使用者介面及您的資料。
 
-## 將本端備份橋接至您的服務
+## 將本端備份帶至您的服務
 
 如果您在本端具有備份檔，而且想要將它還原至 {{site.data.keyword.composeForRethinkDB}}，則可以使用 `rethinkdb restore` 來執行此作業。
 
