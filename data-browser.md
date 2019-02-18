@@ -13,6 +13,7 @@ lastupdated: "2017-10-23"
 {:tip: .tip}
 
 # Data Browser
+{: #data-browser}
 
 The {{site.data.keyword.composeForRethinkDB_full}} service comes with access to the [administration tools provided by RethinkDB](https://www.rethinkdb.com/docs/administration-tools/).
 

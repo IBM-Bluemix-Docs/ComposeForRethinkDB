@@ -22,7 +22,7 @@ For more information on database topics, see the [Compose Articles](https://www.
 
 ## {{site.data.keyword.cloud_notm}} Enterprise
 
-{{site.data.keyword.cloud_notm}} Enterprise provides a private, dedicated, and isolated cluster for customers. To use this plan, you need a {{site.data.keyword.composeEnterprise}} cluster that was provisioned through the {{site.data.keyword.composeEnterprise_full_notm}} service in the [IBM Cloud catalog](https://{DomainName}.net/catalog/).
+{{site.data.keyword.cloud_notm}} Enterprise provides a private, dedicated, and isolated cluster for customers. To use this plan, you need a {{site.data.keyword.composeEnterprise}} cluster that was provisioned through the {{site.data.keyword.composeEnterprise_full_notm}} service in the [IBM Cloud catalog](https://{DomainName}/catalog/).
 
 When you have a {{site.data.keyword.composeEnterprise}} cluster, selecting the {{site.data.keyword.composeForRethinkDB}} service with the Enterprise plan provisions the service onto your dedicated cluster. 
 

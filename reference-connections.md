@@ -11,8 +11,8 @@ lastupdated: "2018-06-14"
 {:pre: .pre}
 {:tip: .tip}
 
-# Connection Configuration
-{: #connection-configuration}
+# Connection Architecture
+{: #connection-architecture}
 
 {{site.data.keyword.composeForRethinkDB_full}} database connections are managed by a RethinkDB Proxy portal.
 
