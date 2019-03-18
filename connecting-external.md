@@ -3,6 +3,9 @@
 copyright:
   years: 2017,2018
 lastupdated: "2017-06-17"
+
+subcollection: compose-for-rethinkdb
+
 ---
 
 {:new_window: target="_blank"}

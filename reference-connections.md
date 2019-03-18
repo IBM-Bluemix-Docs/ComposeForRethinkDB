@@ -2,6 +2,9 @@
 copyright:
   years: 2016,2018
 lastupdated: "2018-06-14"
+
+subcollection: compose-for-rethinkdb
+
 ---
 
 {:new_window: target="_blank"}
