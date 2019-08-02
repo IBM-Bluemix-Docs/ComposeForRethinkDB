@@ -14,6 +14,7 @@ Compose For RethinkDB
 		dashboard-overview.md
 		dashboard-backups.md
 		dashboard-settings.md
+		dashboard-metrics.md
 		data-browser.md
 	{: .navgroup-end}
 
