@@ -1,34 +1,34 @@
 {:navgroup: .navgroup}
 {:topicgroup: .topicgroup}
 
-{: .toc subcollection="compose-for-rethinkdb" category="databases" audience="service" arm="3663079" href="/docs/services/ComposeForRethinkDB/index.html" path="services/ComposeForRethinkDB"}
+{: .toc subcollection="compose-for-rethinkdb" audience="service" category="databases" arm="3663079" href="/docs/services/ComposeForRethinkDB/index.html" path="services/ComposeForRethinkDB}
 Compose For RethinkDB
 
-	{: .navgroup id="learn"}
-	index.md
-	getting_started.md
-	pricing.md
+{: .navgroup id="learn"}
+index.md
+getting_started.md
+pricing.md
 
-	{: .topicgroup}
-	The Service Dashboard
-		dashboard-overview.md
-		dashboard-backups.md
-		dashboard-settings.md
-		dashboard-metrics.md
-		data-browser.md
-	{: .navgroup-end}
+{: .topicgroup}
+The Service Dashboard
+	dashboard-overview.md
+	dashboard-backups.md
+	dashboard-settings.md
+	dashboard-metrics.md
+	data-browser.md
+{: .navgroup-end}
 
-	{: .navgroup id="howto"}
-	{: .topicgroup}
-	Connecting to Compose for RethinkDB
-		connecting-bluemix-app.md
-		connecting-external.md
-	{: .navgroup-end}
+{: .navgroup id="howto"}
+{: .topicgroup}
+Connecting to Compose for RethinkDB
+	connecting-bluemix-app.md
+	connecting-external.md
+{: .navgroup-end}
 
-	{: .navgroup id="reference"}
-	The IBM Cloud Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api)
-	reference-versions.md
-	reference-architecture.md
-	reference-connections.md
-	reference-other-offerings.md
-	{: .navgroup-end}
+{: .navgroup id="reference"}
+The IBM Cloud Compose API](https://www.compose.com/articles/the-ibm-cloud-compose-api)
+reference-versions.md
+reference-architecture.md
+reference-connections.md
+reference-other-offerings.md
+{: .navgroup-end}
