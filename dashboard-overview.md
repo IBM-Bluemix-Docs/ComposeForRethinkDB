@@ -49,7 +49,7 @@ You can find each Connection String for your service in a different tab in the _
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries and contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](./connecting-external.html).
+A URI-formatted connection string that can be used by some client libraries and contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-connecting-external).
 
 ### Admin
 
