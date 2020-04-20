@@ -29,7 +29,7 @@ The _Deployment Details_ pane shows details of your service.
 
 ### Type
 
-The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-settings) section of your service dashboard.
+The type of database that is offered by the service, and the database version that your service uses. If a more recent database version is available, a notification is displayed, together with a link to the [Upgrade version](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-settings) section of your service dashboard.
 
 ### ID
 
@@ -49,7 +49,7 @@ You can find each Connection String for your service in a different tab in the _
 
 ### HTTPS
 
-A URI-formatted connection string that can be used by some client libraries and contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-connecting-external).
+A URI-formatted connection string that can be used by some client libraries and contains all the information that is needed for other libraries to connect. You can find out how to use the Connection String to connect in [Connecting an external application](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-connecting-external).
 
 ### Admin
 

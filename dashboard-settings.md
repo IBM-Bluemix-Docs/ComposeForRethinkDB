@@ -60,7 +60,7 @@ Click **Update Password**. You will be asked to confirm the change. Click **Upda
 ### Updating Connected Applications
 Changing the password invalidates the existing connection string and generate a new one. This causes a service interruption until connected applications are updated with the new connection string. You must do this by suppling the new connection string to your applications.
 
-For more information on connecting your applications, see [Connecting an {{site.data.keyword.cloud}} Application](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-ibmcloud-cf-app), and [Connecting an external application](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-external-app).
+For more information on connecting your applications, see [Connecting an {{site.data.keyword.cloud}} Application](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-ibmcloud-cf-app), and [Connecting an external application](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-external-app).
 
 
 ## Using Whitelists

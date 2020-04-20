@@ -31,4 +31,4 @@ For more information on database topics, see the [Compose Articles](https://www.
 
 When you have a {{site.data.keyword.composeEnterprise}} cluster, selecting the {{site.data.keyword.composeForRethinkDB}} service with the Enterprise plan provisions the service onto your dedicated cluster. 
 
-More information is available on the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/services/compose-enterprise) and in its [documentation](https://{DomainName}/docs/services/ComposeEnterprise/index.html#about-compose-enterprise).
+More information is available on the [{{site.data.keyword.composeEnterprise}} catalog page](https://{DomainName}/catalog/compose-enterprise) and in its [documentation](https://{DomainName}/docs/ComposeEnterprise/index.html#about-compose-enterprise).

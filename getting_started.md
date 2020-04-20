@@ -31,11 +31,11 @@ You also need to install [Node.js](https://nodejs.org/) and [Git](https://git-sc
 ## Step 1. Create a {{site.data.keyword.composeForRethinkDB}} service instance
 {: #create-service}
 
-You can create a {{site.data.keyword.composeForRethinkDB}} service from the [{{site.data.keyword.composeForRethinkDB}} page](https://{DomainName}/catalog/services/compose-for-rethinkdb/) in the {{site.data.keyword.cloud_notm}} catalog.
+You can create a {{site.data.keyword.composeForRethinkDB}} service from the [{{site.data.keyword.composeForRethinkDB}} page](https://{DomainName}/catalog/compose-for-rethinkdb/) in the {{site.data.keyword.cloud_notm}} catalog.
 
 Choose a service name, region, organization and space to provision the service in, and for the **Select a database version** field, choose _Latest Preferred Version_.
 
-Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForRethinkDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/services/ComposeEnterprise?topic=compose-enterprise-about) documentation for more details.
+Next, choose a pricing plan for your service. You can choose the *Standard* or *Enterprise* plans. With the *Enterprise* plan, you can provision your {{site.data.keyword.composeForRethinkDB}} instance into an available {{site.data.keyword.composeEnterprise}} cluster. {{site.data.keyword.composeEnterprise}} provides the security and isolation that is required by enterprise compliance and uses dedicated networking to ensure the performance of the deployed databases. See the [{{site.data.keyword.composeEnterprise}}](/docs/ComposeEnterprise?topic=compose-enterprise-about) documentation for more details.
 
 Click **Create** to provision your service. Provisioning can take a while to complete. You can check on the progress by going to the _Manage_ view for the service.
 
@@ -167,7 +167,7 @@ npm start
 
 The app is now running at [http://localhost:8080](http://localhost:8080). You can add words and definitions to your {{site.data.keyword.composeForRethinkDB}} database. When you stop and restart the app, any words you have already added are displayed when you refresh the page.
 
-For information about the credentials you created for the application to connect to your service, see [Available Credentials](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-ibmcloud-cf-app).
+For information about the credentials you created for the application to connect to your service, see [Available Credentials](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-ibmcloud-cf-app).
 
 ## Next steps
 
@@ -175,8 +175,8 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/compo
 
 To start exploring your {{site.data.keyword.composeForRethinkDB}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-overview)
-- [Backups](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-backups)
-- [Settings](/docs/services/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-settings)
+- [Dashboard Overview](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-overview)
+- [Backups](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-backups)
+- [Settings](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-settings)
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-rethinkdb-signup
