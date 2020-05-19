@@ -4,7 +4,7 @@ copyright:
   years: 2016,2018
 lastupdated: "2018-05-29"
 
-subcollection: compose-for-rethinkdb
+subcollection: ComposeForRethinkDB
 
 ---
 
@@ -167,7 +167,7 @@ npm start
 
 The app is now running at [http://localhost:8080](http://localhost:8080). You can add words and definitions to your {{site.data.keyword.composeForRethinkDB}} database. When you stop and restart the app, any words you have already added are displayed when you refresh the page.
 
-For information about the credentials you created for the application to connect to your service, see [Available Credentials](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-ibmcloud-cf-app).
+For information about the credentials you created for the application to connect to your service, see [Available Credentials](/docs/ComposeForRethinkDB?topic=ComposeForRethinkDB-ibmcloud-cf-app).
 
 ## Next steps
 
@@ -175,8 +175,8 @@ To understand more about how the [sample app](https://github.com/IBM-Cloud/compo
 
 To start exploring your {{site.data.keyword.composeForRethinkDB}} service, see the following topics about the service dashboard:
 
-- [Dashboard Overview](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-overview)
-- [Backups](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-backups)
-- [Settings](/docs/ComposeForRethinkDB?topic=compose-for-rethinkdb-dashboard-settings)
+- [Dashboard Overview](/docs/ComposeForRethinkDB?topic=ComposeForRethinkDB-dashboard-overview)
+- [Backups](/docs/ComposeForRethinkDB?topic=ComposeForRethinkDB-dashboard-backups)
+- [Settings](/docs/ComposeForRethinkDB?topic=ComposeForRethinkDB-dashboard-settings)
 
 [ibm_cloud_signup_url]: https://ibm.biz/compose-for-rethinkdb-signup

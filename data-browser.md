@@ -6,7 +6,7 @@ lastupdated: "2017-10-23"
 
 keywords: rethink, compose
 
-subcollection: compose-for-rethinkdb
+subcollection: ComposeForRethinkDB
 
 ---
 
